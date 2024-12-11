@@ -25,10 +25,10 @@ function upperCasingStates(arr) {
     if (!Array.isArray(arr)) {
         throw new TypeError('Input must be an array')
     }
-    return arr.map(obj => obj.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
+    return arr.map(obj => obj.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' '));
 }
 
-console.log(upperCasingStates(["test","plusieurs mots", "123test"]))
+console.log(upperCasingStates(["test","PLUSIEURS mots", "123test"]))
 
 
 function fahrenheitToCelsius(arr) {
