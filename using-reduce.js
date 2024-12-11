@@ -31,7 +31,7 @@ function funcExec(arr, i=0) {
 const add5 = (x) => x + 5;
 const divideBy2 = (x) => x / 2;
 const square = (x) => x * x;
-funcArr = [add5, divideBy2, square]
+let funcArr = [add5, divideBy2, square]
 
 console.log(funcExec(funcArr)) // 6.25
 console.log(funcExec(funcArr, 3)) // 16
