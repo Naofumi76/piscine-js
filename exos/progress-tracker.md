@@ -44,7 +44,7 @@
 
 - [ ] [fifty-shades-of-cold] (https://zone01normandie.org/markdown/root/public/subjects/fifty-shades-of-cold/README.md)
 
-- [ ] [filter] (https://zone01normandie.org/markdown/root/public/subjects/filter/README.md)
+- [x] [filter] (https://zone01normandie.org/markdown/root/public/subjects/filter/README.md)
 
 - [ ] [find-expression] (https://zone01normandie.org/markdown/root/public/subjects/find-expression/README.md)
 
