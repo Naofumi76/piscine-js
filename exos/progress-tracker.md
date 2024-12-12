@@ -34,7 +34,7 @@
 
 - [x] [declarations] (https://zone01normandie.org/markdown/root/public/subjects/declarations/README.md)
 
-- [ ] [deep-copy] (https://zone01normandie.org/markdown/root/public/subjects/deep-copy/README.md)
+- [x] [deep-copy] (https://zone01normandie.org/markdown/root/public/subjects/deep-copy/README.md)
 
 - [x] [dog-years] (https://zone01normandie.org/markdown/root/public/subjects/dog-years/README.md)
 
