@@ -15,7 +15,7 @@ function round(nb) {
         return nbInt
     }
 }
-console.log(' ROUND :')
+console.log('ROUND :')
 console.log(round(1.3))
 console.log(round(1.7))
 console.log(round(-1.3))
@@ -32,7 +32,7 @@ function floor(nb) {
     }
     return nbInt
 }
-console.log(' FLOOR :')
+console.log('FLOOR :')
 console.log(floor(1))
 console.log(floor(1.3))
 console.log(floor(1.7))
@@ -48,7 +48,7 @@ function trunc(nb) {
     return nbInt
 }
 
-console.log(' TRUNC :')
+console.log('TRUNC :')
 console.log(trunc(1))
 console.log(trunc(1.3))
 console.log(trunc(1.7))
@@ -69,7 +69,7 @@ function ceil(nb) {
     return nbInt
 }
 
-console.log(' CEIL :')
+console.log('CEIL :')
 console.log(ceil(1))
 console.log(ceil(1.3))
 console.log(ceil(1.7))
