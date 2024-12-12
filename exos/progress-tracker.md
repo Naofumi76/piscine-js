@@ -24,7 +24,7 @@
 
 - [ ] [curry-entries] (https://zone01normandie.org/markdown/root/public/subjects/curry-entries/README.md)
 
-- [ ] [cut-corners] (https://zone01normandie.org/markdown/root/public/subjects/cut-corners/README.md)
+- [x] [cut-corners] (https://zone01normandie.org/markdown/root/public/subjects/cut-corners/README.md)
 
 - [x] [date-is] (https://zone01normandie.org/markdown/root/public/subjects/date-is/README.md)
 
