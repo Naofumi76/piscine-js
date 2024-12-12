@@ -20,7 +20,7 @@
 
 - [x] [count-leap-years] (https://zone01normandie.org/markdown/root/public/subjects/count-leap-years/README.md)
 
-- [ ] [currify] (https://zone01normandie.org/markdown/root/public/subjects/currify/README.md)
+- [x] [currify] (https://zone01normandie.org/markdown/root/public/subjects/currify/README.md)
 
 - [ ] [curry-entries] (https://zone01normandie.org/markdown/root/public/subjects/curry-entries/README.md)
 
