@@ -46,7 +46,7 @@
 
 - [x] [filter] (https://zone01normandie.org/markdown/root/public/subjects/filter/README.md)
 
-- [ ] [find-expression] (https://zone01normandie.org/markdown/root/public/subjects/find-expression/README.md)
+- [x] [find-expression] (https://zone01normandie.org/markdown/root/public/subjects/find-expression/README.md)
 
 - [ ] [flagger] (https://zone01normandie.org/markdown/root/public/subjects/flagger/README.md)
 
