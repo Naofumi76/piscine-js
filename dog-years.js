@@ -19,5 +19,5 @@ function dogYears(planet, yearInSeconds) {
 
     const dogYearsOnPlanet = planetYears * dogYearsPerHumanYear
 
-    return dogYearsOnPlanet.toFixed(2)
+    return Number(dogYearsOnPlanet.toFixed(2))
 }
