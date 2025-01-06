@@ -11,6 +11,6 @@ function set(key, value) {
         sourceObject[key] = value
         return sourceObject[key]
     } else {
-        return undefined
+        return value
     }
 }
