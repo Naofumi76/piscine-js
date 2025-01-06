@@ -9,7 +9,7 @@ const orbitalPeriods= {
     neptune: 164.79132,
 }
 
-function dogyears(planet, yearInSeconds) {
+function dogYears(planet, yearInSeconds) {
     const dogYearsPerHumanYear = 7
     const secondsInEarthYear = 31557600
 
@@ -21,3 +21,5 @@ function dogyears(planet, yearInSeconds) {
 
     return dogYearsOnPlanet.toFixed(2)
 }
+
+console.log(dogYears('earth', 1000000000))
