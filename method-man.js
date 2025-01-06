@@ -34,7 +34,7 @@ function capitalize (str) {
     if (typeof str!=='string') {
         throw new Error('Input must be a string')
     }
-    let wordsArr = words(str)
+    let wordsArr = words(str.toLowerCase())
     let capitalizedWordsArr = wordsArr.map(word => word.charAt(0).toUpperCase() + word.slice(1))
     let capitalizedStr = sentence(capitalizedWordsArr)
     return capitalizedStr
