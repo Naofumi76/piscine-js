@@ -16,7 +16,7 @@ function last(arg) {
 
 function kiss(arg) {
     if (typeof arg=== 'string' || Array.isArray(arg)) {
-        return [arg[0], arg[arg.length-1]]
+        return [arg[arg.length-1], arg[0]]
     } else {
         throw new Error('Input must be a string or an array')
     }
