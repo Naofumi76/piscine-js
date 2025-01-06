@@ -5,7 +5,5 @@ const nested = { arr:[4, undefined, '2'], obj: {str:"Chaine", num: 2, bool: true
 Object.freeze(nested)
 Object.freeze(arr)
 Object.freeze(obj)
-
-console.log(obj)
-obj.str.update="TEST"
-console.log(obj)
+Object.freeze(nested.arr)
+Object.freeze(nested.obj)
