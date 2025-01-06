@@ -2,7 +2,7 @@ function get(key) {
     if (key in sourceObject) {
         return sourceObject[key]
     } else {
-        throw new Error(`Key "${key}" not found in sourceObject`)
+        return undefined
     }
 }
 
@@ -11,6 +11,6 @@ function set(key, value) {
         sourceObject[key] = value
         return sourceObject[key]
     } else {
-        throw new Error(`Key "${key}" not found in sourceObject`)
+        return undefined
     }
 }
