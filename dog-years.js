@@ -21,5 +21,3 @@ function dogYears(planet, yearInSeconds) {
 
     return dogYearsOnPlanet.toFixed(2)
 }
-
-console.log(dogYears('earth', 1000000000))
