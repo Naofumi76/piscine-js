@@ -3,10 +3,6 @@ function get(key) {
 }
 
 function set(key, value) {
-    if (key in sourceObject) {
-        sourceObject[key] = value
-        return sourceObject[key]
-    } else {
-        return value
-    }
+    sourceObject[key] = value
+    return value
 }
