@@ -27,7 +27,7 @@ function whisper (str) {
         throw new Error('Input must be a string')
     }
     let whisperedStr = str.toLowerCase()
-    return whisperedStr
+    return '*'+whisperedStr+'*'
 }
 
 function capitalize (str) {
