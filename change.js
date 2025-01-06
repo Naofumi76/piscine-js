@@ -1,10 +1,3 @@
-const sourceObject = {
-    num: 42,
-    bool: true,
-    str: 'some text',
-    log: console.log
-}
-
 function get(key) {
     if (key in sourceObject) {
         return sourceObject[key]
