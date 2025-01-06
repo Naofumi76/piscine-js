@@ -3,4 +3,4 @@ const clone2 = Object.assign({}, person)
 const samePerson = person
 
 person.age += 1
-person.country = 'US'
+person.country = 'FR'
