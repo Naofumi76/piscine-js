@@ -16,8 +16,9 @@ function findExpression(number) {
     }
     return chaineresult.trim()
 }
-
+/*
 const add4 = '+4'
 const mul2 = '*2'
 
 console.log(findExpression(14))
+*/
