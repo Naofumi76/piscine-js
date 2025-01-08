@@ -17,6 +17,3 @@ function findExpression(number) {
 
     return chaineresult.trim();
 }
-
-// Testing the function
-console.log(findExpression(14));
