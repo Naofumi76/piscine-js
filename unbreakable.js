@@ -29,10 +29,15 @@ function split(str, sep) {
     return parts
 }
 
-function join(arr) {
+
+function join(arr, sep) {
     var result = ""
-    for (let i = 0; i < arr.length; i++) {
-        result += arr[i]
+    for (let values in arr) {
+        if (values <= arr.length-2) {
+            result += arr[values] + sep
+        } else {
+            result += arr[values]
+        }
     }
     return result
 }
@@ -41,5 +46,5 @@ function join(arr) {
 console.log(split('ggg - ddd - b', ' - '))
 console.log(split('ggg - ddd - b', ''))
 console.log(split("ceci  est  un  test", "  "))
-console.log(join(['ceci est un test', 'test']))
+console.log(join(['ceci est un test', 'test'], "    "))
 */
