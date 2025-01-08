@@ -1,9 +1,9 @@
-function flat(arr, done = false) {
+function flat(arr, depth=0) {
     let result = []
     for (let items of arr) {
-        if (Array.isArray(items) && done === false) {
-            done = true
-            result = result.concat(flat(items, done))
+        if (Array.isArray(items) && depth >= 0) {
+            depth--
+            result = result.concat(flat(items,depth))
         } else {
             result.push(items)
         }
@@ -11,4 +11,4 @@ function flat(arr, done = false) {
     return result
 }
 
-//console.log(flat([1, 2, [3, 4], 5, [6, [7, 8, [9, 10]]]]));
+console.log(flat([1, [2, [3], [4, [5]]]], 2))
