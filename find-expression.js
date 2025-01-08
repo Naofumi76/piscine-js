@@ -11,8 +11,7 @@ function findExpression(number) {
             chaineresult += ' ' + add4
         }
         else {
-            chaineresult = undefined
-            return chaineresult
+            return undefined
         }
     }
     return chaineresult.trim()
