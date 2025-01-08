@@ -31,7 +31,8 @@ function join(arr) {
     return result
 }
 
-
+/*
 console.log(split('ggg - ddd - b', ' - '))
 console.log(split("ceci  est  un  test", "  "))
 console.log(join(['ceci est un test', 'test']))
+*/
