@@ -19,18 +19,15 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
-    if (str.length < 2) {
+    if (str.length < 2 || (str.length<3 && keepFirst(str) == keepLast(str))) {
         return str
     }
     const firstPart = keepFirst(str);
     const lastPart = keepLast(str);
-    if (firstPart === lastPart) {
-        return firstPart
-    }
     if (str.length === 3 && firstPart[1] === lastPart[0]) {
         return str;
     }
     return firstPart + lastPart;
 }
-
-console.log(keepFirstLast('afd'))
+console.log(keepFirstLast('af'))
+console.log(keepFirstLast('yoafdyo'))
