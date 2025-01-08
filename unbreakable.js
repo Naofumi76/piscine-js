@@ -4,12 +4,15 @@ function split(str, sep) {
     }
     var parts = []
     var temp = ""
-    for (let values in str) {
-        if (str[values] !== sep) {
-            temp += str[values]
-        } else {
+    var index = 0
+    while (index < str.length) {
+        if (str.substring(index, index + sep.length) === sep) {
             parts.push(temp)
             temp = ""
+            index += sep.length
+        } else {
+            temp += str[index]
+            index++
         }
     }
     parts.push(temp)
@@ -24,12 +27,16 @@ function join(arr, sep) {
         throw new Error('Separator must be a string')
     }
     var result = ""
-    for (let values in arr) {
-        if (values <= arr.length-2) {
-            result += arr[values] + sep
-        } else {
-            result += arr[values]
+    for (let i = 0; i < arr.length; i++) {
+        if (i > 0) {
+            result += sep
         }
+        result += arr[i]
     }
     return result
 }
+/*
+console.log(split('ggg - ddd - b', ' - '))
+console.log(split("ceci  est  un  test", "  "))
+console.log(join(['ceci est un test', 'test'], 'gg'))
+*/
