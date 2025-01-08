@@ -11,14 +11,14 @@ function findExpression(number) {
             chaineresult += ' ' + add4
         }
         else {
-            return undefined
+            chaineresult = undefined
+            return chaineresult
         }
     }
     return chaineresult.trim()
 }
-/*
+
 const add4 = '+4'
 const mul2 = '*2'
 
 console.log(findExpression(14))
-*/
