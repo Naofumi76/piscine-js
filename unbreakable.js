@@ -1,12 +1,15 @@
 function split(str, sep) {
-    if (sep === "") {
-        return [str]
-    }
     var parts = []
     var temp = ""
     var index = 0
     while (index < str.length) {
         var match = true
+        if (sep === "") {
+            for (let char of str) {
+                parts.push(char)
+            }
+            return parts
+        }
         for (let i = 0; i < sep.length; i++) {
             if (str[index + i] !== sep[i]) {
                 match = false
