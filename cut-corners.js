@@ -1,5 +1,5 @@
 function round(nb) {
-    let fracInt = modulo(nb, 1)
+    let fracInt = getCommaValue(nb)
     let nbInt = nb-fracInt
     if (fracInt >= 0.5) {
         return nbInt+1
@@ -11,7 +11,7 @@ function round(nb) {
 }
 
 function floor(nb) {
-    let fracInt = modulo(nb, 1)
+    let fracInt = getCommaValue(nb)
     let nbInt = nb-fracInt
     if (fracInt < 0) {
         return nbInt-1
@@ -20,14 +20,14 @@ function floor(nb) {
 }
 
 function trunc(nb) {
-    let fracInt = modulo(nb, 1)
+    let fracInt = getCommaValue(nb)
     let nbInt = nb-fracInt
     return nbInt
 }
 
 
 function ceil(nb) {
-    let fracInt = modulo(nb, 1)
+    let fracInt = getCommaValue(nb)
     let nbInt = nb-fracInt
     if (fracInt > 0) {
         return nbInt+1
@@ -60,6 +60,20 @@ function divide(x1, x2) {
     return negativeResult ? -quotient : quotient;
 }
 
+function getCommaValue(nb) {
+    if (nb < 0) {
+        while (nb <= -1) {
+            nb += 1
+        }  
+    } else {
+        while (nb >= 1) {
+            nb -= 1
+        }
+    }
+    return nb
+
+}
+
 function modulo(x1, y) {
     let remainder = x1 - multiply(divide(x1, y), y);
     if (x1 < 0 && remainder > 0) {
@@ -69,3 +83,8 @@ function modulo(x1, y) {
     }
     return remainder;
 }
+const nums = [3.7, -3.7, 3.1, -3.1]
+console.log(nums.map(round))
+console.log(nums.map(floor))
+console.log(nums.map(trunc))
+console.log(nums.map(ceil))
