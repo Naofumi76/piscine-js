@@ -1,7 +1,4 @@
 function round(nb) {
-    if (typeof nb !== 'number') {
-        throw new Error('Input must be a number')
-    }
     let fracInt = modulo(nb, 1)
     let nbInt = nb-fracInt
     if (fracInt >= 0.5) {
@@ -14,9 +11,6 @@ function round(nb) {
 }
 
 function floor(nb) {
-    if (typeof nb !== 'number') {
-        throw new Error('Input must be a number')
-    }
     let fracInt = modulo(nb, 1)
     let nbInt = nb-fracInt
     if (fracInt < 0) {
@@ -26,9 +20,6 @@ function floor(nb) {
 }
 
 function trunc(nb) {
-    if (typeof nb!== 'number') {
-        throw new Error('Input must be a number')
-    }
     let fracInt = modulo(nb, 1)
     let nbInt = nb-fracInt
     return nbInt
@@ -36,9 +27,6 @@ function trunc(nb) {
 
 
 function ceil(nb) {
-    if (typeof nb!== 'number') {
-        throw new Error('Input must be a number')
-    }
     let fracInt = modulo(nb, 1)
     let nbInt = nb-fracInt
     if (fracInt > 0) {
@@ -50,12 +38,6 @@ function ceil(nb) {
 }
 
 function multiply(x1, x2) {
-    if (typeof x1 !== 'number' || typeof x2 !== 'number') {
-        throw new Error('Argument must be a number');
-    }
-    if (x1 === 0 || x2 === 0) {
-        return 0;
-    }
     let oneNegative = (x1 < 0) !== (x2 < 0);
     x1 = Math.abs(x1);
     x2 = Math.abs(x2);
@@ -67,12 +49,6 @@ function multiply(x1, x2) {
 }
 
 function divide(x1, x2) {
-    if (typeof x1 !== 'number' || typeof x2 !== 'number') {
-        throw new Error('Argument must be a number');
-    }
-    if (x2 === 0) {
-        throw new Error('Cannot divide by zero');
-    }
     let negativeResult = (x1 < 0) !== (x2 < 0);
     x1 = Math.abs(x1);
     x2 = Math.abs(x2);
@@ -85,12 +61,6 @@ function divide(x1, x2) {
 }
 
 function modulo(x1, y) {
-    if (typeof x1 !== 'number' || typeof y !== 'number') {
-        throw new Error('Argument must be a number');
-    }
-    if (y === 0) {
-        throw new Error('Cannot divide by zero');
-    }
     let remainder = x1 - multiply(divide(x1, y), y);
     if (x1 < 0 && remainder > 0) {
         remainder -= Math.abs(y);
