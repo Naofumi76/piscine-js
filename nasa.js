@@ -1,6 +1,6 @@
 function nasa(N) {
     var str = ""
-    for (var i = 0; i <= N; i++) {
+    for (var i = 1; i <= N; i++) {
         if (i%3 === 0 && i%5 ===0) {
             str += "NASA "
         } else if (i%3 === 0) {
@@ -19,4 +19,4 @@ function nasa(N) {
 }
 
 
-console.log(nasa(4))
+//console.log(nasa(15))
