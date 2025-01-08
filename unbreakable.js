@@ -5,8 +5,8 @@ function split(str, sep) {
     while (index < str.length) {
         var match = true
         if (sep === "") {
-            for (let char of str) {
-                parts.push(char)
+            for (let i = 0; i < str.length; i++) {
+                parts.push(str[i])
             }
             return parts
         }
