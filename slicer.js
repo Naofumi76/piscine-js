@@ -13,16 +13,14 @@ function slice(str, start=0, end=str.length) {
     if (end < 0) {
         end = str.length + end
     }
-    for (let values in str) {
-        if (values < start ) {
-            continue
-        } else if (values > end) {
-            break
-        }
+
+    start = Math.max(0, start)
+    end = Math.min(str.length, end)
+    for (let i = start; i < end; i++) {
         if (Array.isArray(str)) {
-            result.push(str[values])
+            result.push(str[i]);
         } else {
-            result += str[values]
+            result += str[i];
         }
     }
     return result
