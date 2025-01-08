@@ -4,11 +4,11 @@ function findExpression(number) {
     while (result != number) {
         if ((result * 2) <= number && (result * 2) <= number - 4) {
             result *= 2;
-            chaineresult += ' ' + mul2
+            chaineresult += ' ' + '*2'
         }
         else if ((result + 4) <= number) {
             result += 4;
-            chaineresult += ' ' + add4
+            chaineresult += ' ' + '+4'
         }
         else {
             return 'undefined'
