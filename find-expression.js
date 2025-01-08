@@ -1,5 +1,6 @@
 function findExpression(number) {
     let result = 1
+    var undef
     let chaineresult = "1"
     while (result != number) {
         if ((result * 2) <= number && (result * 2) <= number - 4) {
@@ -11,7 +12,7 @@ function findExpression(number) {
             chaineresult += ' ' + add4
         }
         else {
-            return undefined
+            return undef
         }
     }
     return chaineresult.trim()
