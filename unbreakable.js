@@ -6,7 +6,14 @@ function split(str, sep) {
     var temp = ""
     var index = 0
     while (index < str.length) {
-        if (str.substring(index, index + sep.length) === sep) {
+        var match = true
+        for (let i = 0; i < sep.length; i++) {
+            if (str[index + i] !== sep[i]) {
+                match = false
+                break        
+            }
+        }
+        if (match) {
             parts.push(temp)
             temp = ""
             index += sep.length
