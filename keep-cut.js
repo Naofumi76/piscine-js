@@ -19,5 +19,8 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
-    return  keepFirst(str) + keepLast(str)
+    if (keepFirst(str) === keepLast(str)) {
+        return keepFirst(str)
+    }
+    return keepFirst(str) + keepLast(str)
 }
