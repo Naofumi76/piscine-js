@@ -8,10 +8,10 @@ function nasa(N) {
         } else if (i%5 === 0) {
             str += "SA "
         } else {
-            if (i === N) {
-                str += String(i)
+            if (i != N) {
+                str += String(i)+ " "
             } else {
-                str+= String(i) + " "
+                str+= String(i)
             }
         }
     }
