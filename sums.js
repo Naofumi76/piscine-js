@@ -1,5 +1,7 @@
 function sums(a) {
-
+    if (a === 0) {
+        return []
+    }
     function solve(nb, partition = [], start = 1){
         if (typeof nb !== 'number') {
             throw new Error('Input must be a number')
@@ -18,7 +20,7 @@ function sums(a) {
     return solve(a);
 }
 
-
+console.log(sums(0))
 console.log(sums(4))
 console.log(sums(6))
 console.log(sums(8))
