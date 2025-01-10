@@ -14,5 +14,5 @@ function ionOut(str) {
     return tab
 }
 
-console.log('transfusion')
+console.log(ionOut('transfusion'))
 console.log(ionOut('test reaction mange'))
