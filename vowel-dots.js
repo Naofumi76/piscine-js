@@ -1,4 +1,4 @@
-var vowels = /[aeiou]/g
+var vowels = /[aeiouAEIOU]/g
 function vowelDots(str) {
     if (typeof str!=='string') {
         throw new Error('Input must be a string')
@@ -7,4 +7,4 @@ function vowelDots(str) {
     return result
 }
 
-console.log(vowelDots('hello world'))
+console.log(vowelDots('Hello WOrld'))
