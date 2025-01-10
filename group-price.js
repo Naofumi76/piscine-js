@@ -3,9 +3,9 @@ function groupPrice(str) {
         throw new Error('Input must be a string')
     }
     // Regex to get the price name (3 letters), all number before comma, and 2 number after comma
-    regexFullPrice = /([A-Z]{3})(\d+)\.(\d{2})/g
+    var regexFullPrice = /([A-Z]{3})(\d+)\.(\d{2})/g
     var tab2d = []
-    matches = str.matchAll(regexFullPrice)
+    var matches = str.matchAll(regexFullPrice)
     if (!matches) {
         return []
     }
@@ -14,3 +14,5 @@ function groupPrice(str) {
     }
     return tab2d
 }
+
+console.log(groupPrice('USD123.45'))
