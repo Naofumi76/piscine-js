@@ -1,5 +1,5 @@
+var vowels = /[aeiou]/g
 function vowelDots(str) {
-    var vowels = /[aeiouAEIOU]/g
     if (typeof str!=='string') {
         throw new Error('Input must be a string')
     }
