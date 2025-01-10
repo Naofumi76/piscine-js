@@ -15,15 +15,69 @@ function crosswordSolver(puzzle, words) {
 }
 
 function getWordsPositions(puzzleMap) {
-    const positions = []
-    for (let i = 0; i < puzzleMap.length; i++) {
-        for (let j = 0; j < puzzleMap[i].length; j++) {
-            if (puzzleMap[i][j] === '.' || (puzzleMap[i][j] > '1' && puzzleMap[i][j] <= '9')) {
-                positions.push({ x: j, y: i })
+    const positions = [];
+    console.log(puzzleMap)
+    const rows = puzzleMap.length;
+    const cols = puzzleMap[0].length;
+    for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+            cell = puzzleMap[y][x]
+            if ((cell >= '1' && cell <= '2')) {
+                var {valverif, wordLength} = verifHorizontal(puzzleMap, x, y)
+                if (valverif) {
+                    positions.push({ x: x, y: y, direction: 'horizontal' , wordLength: wordLength})
+                }
+                var {valverif, wordLength} = verifVertical(puzzleMap, x, y) 
+                if (valverif){
+                    positions.push({ x: x, y: y, direction:'vertical', wordLength: wordLength })
+                }
             }
         }
     }
     return positions
+}
+
+function verifVertical(puzzleMap, x, y) {
+    var row = puzzleMap.map(rows => rows[x])
+    var wordLength = 1
+    if (y+1 > row.length) {
+        return false
+    }
+    if (y-1 > 0 && row[y-1] >= '0' && row[y-1] <= '2') {
+        return false
+    }
+    for (let i = y+1; i < row.length; i++) {
+        if (row[i] >= '0' && row[i] <= '2') {
+            wordLength++
+            continue
+        } else {
+            return false
+        }
+    }
+    if (wordLength <= 1) {
+        return false
+    }
+    return {valverif : true, wordLength: wordLength}
+}
+
+function verifHorizontal(puzzleMap, x, y) {
+    col = puzzleMap[y]
+    var wordLength = 1
+    if (x+1 > col.length) {
+        return false
+    }
+    for (let i = x+1; i < col.length; i++) {
+        if (col[i] >= '0' && col[i] <= '2') {
+            wordLength++
+            continue
+        } else {
+            return false
+        }
+    }
+    if (wordLength <= 1) {
+        return false
+    }
+    return {valverif : true, wordLength : wordLength}
 }
 
 function isValidPuzzle(puzzle, words) {
