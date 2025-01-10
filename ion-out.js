@@ -7,7 +7,7 @@ function ionOut(str) {
     var arrStr = str.split(' ')
     for (let i = 0; i < arrStr.length; i++) {
         if (arrStr[i].match(reg)) {
-            wordOnly = arrStr[i].replace(/[^a-zA-Z]/g, '')
+            var wordOnly = arrStr[i].replace(/[^a-zA-Z]/g, '')
             tab.push(wordOnly.replace('ion', ''))
         }
     }
