@@ -2,7 +2,7 @@ function ionOut(str) {
     if (typeof str!=='string') {
         throw new Error('Input must be a string')
     }
-    var reg = /(?<=t)(\w*?)ion/
+    var reg = /(\w*?)tion/
     var tab = []
     var arrStr = str.split(' ')
     for (let i = 0; i < arrStr.length; i++) {
@@ -14,4 +14,5 @@ function ionOut(str) {
     return tab
 }
 
-console.log(ionOut('attention, direction'))
+console.log('transfusion')
+console.log(ionOut('test reaction mange'))
