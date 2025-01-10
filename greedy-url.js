@@ -2,7 +2,7 @@ function getURL(str) {
     //var reg = /(https?:\/\/[^\s]+)/g
 
     // This regex allows us to get the url starting with http or https, with all their query parameters.
-    var reg = /https?:\/\/[^\s?]+(?:\?([^#\s]*))?/g
+    var reg = /https?:\/\/[^\s]+(?:\?([^#\s]*))?(?:#\S*)?/g
     var tabURL = str.match(reg)
     if (!tabURL) {
         return []
