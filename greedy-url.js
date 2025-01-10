@@ -11,7 +11,7 @@ function getURL(str) {
 }
 
 function greedyQuery(str) {
-    tabURL = getURL(str)
+    var tabURL = getURL(str)
     var result = []
     for (var i = 0; i < tabURL.length; i++) {
         var query = tabURL[i].match(/\?([^#\s]*)/)
@@ -26,7 +26,7 @@ function greedyQuery(str) {
 }
 
 function notSoGreedy(str) {
-    tabURL = getURL(str)
+    var tabURL = getURL(str)
     var result = []
     for (var i = 0; i < tabURL.length; i++) {
         var query = tabURL[i].match(/\?([^#\s]*)/)
