@@ -41,7 +41,11 @@ function notSoGreedy(str) {
 }
 
 const dataset = `
-qqq http:// qqqq q qqqqq https://something.com/hello qqqqqqq qhttp://example.com/hello?you=something&something=you
+    http://example.com
+    https://example.com?param1=value1
+    https://example.org?param1=value1&param2=value2&param3=value3
+    https://example.net?param1=value1&param2=value2&param3=value3&param4=value4&param5=value5
+    qqq http:// qqqq q qqqqq https://something.com/hello qqqqqqq qhttp://example.com/hello?you=something&something=you
 `;
 
 console.log(getURL(dataset));
