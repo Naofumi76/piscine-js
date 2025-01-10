@@ -9,7 +9,7 @@ function groupPrice(str) {
     if (!matches) {
         return []
     }
-    for (match of matches) {
+    for (var match of matches) {
         tab2d.push([match[0], match[2], match[3]])
     }
     return tab2d
