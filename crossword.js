@@ -9,6 +9,21 @@ function crosswordSolver(puzzle, words) {
         return
     }
     const puzzleMap = puzzle.split('\n').map(rows => rows.split(''))
+    const positions = getWordsPositions(puzzleMap)
+    console.log(puzzle)
+    console.log(positions)
+}
+
+function getWordsPositions(puzzleMap) {
+    const positions = []
+    for (let i = 0; i < puzzleMap.length; i++) {
+        for (let j = 0; j < puzzleMap[i].length; j++) {
+            if (puzzleMap[i][j] === '.' || (puzzleMap[i][j] > '1' && puzzleMap[i][j] <= '9')) {
+                positions.push({ x: j, y: i })
+            }
+        }
+    }
+    return positions
 }
 
 function isValidPuzzle(puzzle, words) {
