@@ -7,8 +7,11 @@ function ionOut(str) {
     var arrStr = str.split(' ')
     for (let i = 0; i < arrStr.length; i++) {
         if (arrStr[i].match(reg)) {
-            tab.push(arrStr[i].replace('ion', ''))
+            wordOnly = arrStr[i].replace(/[^a-zA-Z]/g, '')
+            tab.push(wordOnly.replace('ion', ''))
         }
     }
     return tab
 }
+
+console.log(ionOut('attention, direction'))
