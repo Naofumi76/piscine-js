@@ -9,7 +9,6 @@ function findIP(str) {
         return []
     } 
     var validIPS = []
-    var firstIPPart = true
     for (var match of matchesIP) {
         var ip = match.match(ipRegex)
         if (ip) {
@@ -21,16 +20,10 @@ function findIP(str) {
                     isValid = false
                     break
                 }
-                if (firstIPPart && part === 0) {
-                    isValid = false
-                    break
-                }
-                firstIPPart = false
             }
             if (isValid) {
                 validIPS.push(match)
             }
-            firstIPPart = true
         }
     }
 
