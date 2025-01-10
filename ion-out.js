@@ -4,7 +4,7 @@ function ionOut(str) {
     }
     var reg = /(?<=t)(\w*?)ion/
     var tab = []
-    arrStr = str.split(' ')
+    var arrStr = str.split(' ')
     for (let i = 0; i < arrStr.length; i++) {
         if (arrStr[i].match(reg)) {
             tab.push(arrStr[i].replace('ion', ''))
