@@ -9,6 +9,7 @@ function findIP(str) {
         return []
     } 
     var validIPS = []
+    var firstIPPart = true
     for (var match of matchesIP) {
         var ip = match.match(ipRegex)
         if (ip) {
@@ -20,10 +21,16 @@ function findIP(str) {
                     isValid = false
                     break
                 }
+                if (firstIPPart && part === 0) {
+                    isValid = false
+                    break
+                }
+                firstIPPart = false
             }
             if (isValid) {
                 validIPS.push(match)
             }
+            firstIPPart = true
         }
     }
 
@@ -41,4 +48,4 @@ function findIP(str) {
     return matchesPort
 }
 
-console.log(findIP('Here are some IPs: 192.168.0.1, 10.0.0.256, 172.16.254.1:8080, 192.168.1.1:70000.'));
+console.log(findIP('Here are some IPs: 0.1.23.7, 10.0.0.7, 192.168.0.1, 10.0.0.256, 172.16.254.1:8080, 192.168.1.1:70000.'));
