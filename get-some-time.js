@@ -14,7 +14,7 @@ function firstDayWeek(nbWeek, strYear) {
 
     let firstDayWeek = new Date(date)
     if (nbWeek === 1 && firstDayWeek.getFullYear() !== parseInt(strYear)) {
-        return `01/01/${strYear}`
+        return `01-01-${strYear}`
     }
     firstDayWeek.setDate(firstDayWeek.getDate() + 7 * (nbWeek - 1))
 
@@ -23,10 +23,10 @@ function firstDayWeek(nbWeek, strYear) {
     let month = (firstDayWeek.getMonth()+1).toString().padStart(2, '0')
     let year = firstDayWeek.getFullYear()
 
-    return `${day}/${month}/${year}`
+    return `${day}-${month}-${year}`
 }
 
-
+console.log(firstDayWeek(1, '1000'))
 console.log(firstDayWeek(1, '2022'))
 console.log(firstDayWeek(2, '2022'))
 console.log(firstDayWeek(3, '2022'))
