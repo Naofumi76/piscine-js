@@ -13,10 +13,12 @@ console.log(isValid(Date.now()))
 
 function isAfter(date1, date2) {
     if (!isValid(date1) ||!isValid(date2)) {
-        throw new Error('Invalid date')
+        return false
     }
     return date1 > date2
 }
+
+console.log(isAfter(2))
 
 function isBefore(date1, date2) {
     if (!isValid(date1) ||!isValid(date2)) {
