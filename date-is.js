@@ -31,24 +31,18 @@ function isFuture(date1) {
     if (!isValid(date1)) {
         return false
     }
-    let currentDate = new Date()
-    let year = currentDate.getFullYear()
-    let month = currentDate.getMonth() + 1
-    let day = currentDate.getDate()
 
-    currentDate = new Date(year, month, day)
+    currentDate = new Date(Date.now())
     return date1 > currentDate
 }
+
+console.log(isFuture(new Date(Date.now() + 1)))
 
 function isPast(date1) {
     if (!isValid(date1)) {
         return false
     }
-    let currentDate = new Date()
-    let year = currentDate.getFullYear()
-    let month = currentDate.getMonth() + 1
-    let day = currentDate.getDate()
 
-    currentDate = new Date(year, month, day)
+    currentDate = new Date(Date.now())
     return date1 < currentDate
 }
