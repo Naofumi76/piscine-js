@@ -1,11 +1,15 @@
 function isValid(date) {
-    if (!(date instanceof Date) || isNaN(date.getTime())) {
-        return false
+    if (date instanceof Date) {
+        return !isNaN(date.getTime())
     }
-    return true
+    if (typeof date === 'number') {
+        return !isNaN(new Date(date).getTime())
+    }
+    return false
 }
 
 console.log(isValid(new Date('')))
+console.log(isValid(Date.now()))
 
 function isAfter(date1, date2) {
     if (!isValid(date1) ||!isValid(date2)) {
