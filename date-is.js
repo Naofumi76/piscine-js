@@ -32,7 +32,7 @@ function isFuture(date1) {
         return false
     }
 
-    var currentDate = new Date(Date.now())
+    var currentDate = new Date()
     return date1 > currentDate
 }
 
@@ -43,6 +43,6 @@ function isPast(date1) {
         return false
     }
 
-    var currentDate = new Date(Date.now())
+    var currentDate = new Date()
     return date1 < currentDate
 }
