@@ -4,11 +4,10 @@ function countLeapYears(date) {
     }
 
     let currentYear = date.getFullYear()
-
     let leapYears = Math.floor(currentYear / 4) - Math.floor(currentYear / 100) + Math.floor(currentYear / 400)
-    return leapYears
+    return leapYears === 0 ? 0 : leapYears-1
 }
-
+console.log(countLeapYears(new Date('1664-08-09')))
 console.log(countLeapYears(new Date('2000-01-01')));
 console.log(countLeapYears(new Date('2024-01-01')));
 console.log(countLeapYears(new Date('0001-01-01')));
