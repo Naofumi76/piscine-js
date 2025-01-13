@@ -1,9 +1,11 @@
 function isValid(date) {
-    if (!(date instanceof Date)) {
+    if (!(date instanceof Date) || isNaN(date.getTime())) {
         return false
     }
     return true
 }
+
+console.log(isValid(new Date('')))
 
 function isAfter(date1, date2) {
     if (!isValid(date1) ||!isValid(date2)) {
@@ -43,4 +45,4 @@ function isPast(date1) {
 
     currentDate = new Date(year, month, day)
     return date1 < currentDate
-}
+}isValid(new Date(''))
