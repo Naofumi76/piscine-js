@@ -2,11 +2,12 @@ function map(arr, func) {
     if (!Array.isArray(arr) || typeof func !== 'function') {
         return
     }
+    var result = []
     for (let i = 0; i < arr.length; i++) {
-        const result = func(arr[i], i, arr)
-        arr[i] = result
+        const value = func(arr[i], i, arr)
+        result.push(value)
     }
-    return arr
+    return result
 }
 
 function flatMap(arr, func) {
