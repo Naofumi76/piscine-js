@@ -1,4 +1,4 @@
-function forEach(callback, arr) {
+function forEach(arr, callback) {
     for (let i = 0; i < arr.length; i++) {
         callback(arr[i], i, arr)
     }
@@ -6,14 +6,14 @@ function forEach(callback, arr) {
 
 const testArr = [1, 2, 3]
 var result = []
-forEach(value => result.push(value), testArr)
+forEach(testArr, value => result.push(value))
 console.log(result)
 
 const ctx = {
     arr: [1, 2, 3, 4, 5, 0.31087952857109147, 7, 10, -10, 20, -95]
 }
 result = []
-const returned = forEach(value => result.push(value), ctx.arr)
+const returned = forEach(ctx.arr, value => result.push(value))
 console.log(returned)
 console.log(result)
 
