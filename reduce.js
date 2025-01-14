@@ -4,7 +4,11 @@ function fold(arr, func, accumulator) {
     }
     
     if (accumulator === undefined) {
-        accumulator = 0;
+        if (arr.length > 0 && typeof arr[0] === 'string') {
+            accumulator = ''
+        } else {
+            accumulator = 0
+        }
     }
 
     for (let i = 0; i < arr.length; i++) {
@@ -20,7 +24,11 @@ function foldRight(arr, func, accumulator) {
     }
     
     if (accumulator === undefined) {
-        accumulator = 0;
+        if (arr.length > 0 && typeof arr[0] === 'string') {
+            accumulator = ''
+        } else {
+            accumulator = 0
+        }
     }
 
     for (let i = arr.length-1; i >= 0; i--) {
