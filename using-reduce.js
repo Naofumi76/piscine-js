@@ -4,7 +4,6 @@ function adder(arr, i=0) {
     }
     return arr.reduce((acc, val) => acc + val, i)
 }
-
 console.log(adder([1, 2, 3, 4, 5])) // -> 15
 
 function sumOrMul(arr, i=0) {
