@@ -1,9 +1,6 @@
 function forEach(callback, arr) {
-    if (typeof callback !== 'function' || !Array.isArray(arr)) {
-        return
-    }
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = callback(arr[i], i, arr)
+        callback(arr[i], i, arr)
     }
 }
 
