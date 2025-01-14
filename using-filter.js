@@ -20,7 +20,10 @@ function filter5Vowels(arr) {
     if (!Array.isArray(arr)) {
         throw new TypeError('Input must be an array')
     }
-    return arr.filter(state => /[AEIOUaeiou]{5}/.test(state))
+    return arr.filter(state => {
+        const vowelCount = (state.match(/[AEIOUaeiou]/g) || []).length;
+        return vowelCount >= 5;
+    })
 }
 
 console.log(filter5Vowels(["Aeiou", "test", "abcd", "EEEEEEEEE", "IEOUA"]))
