@@ -13,8 +13,6 @@ function format(date, formatStr) {
        .replace("mm", minute)
        .replace("ss", second);
 }
-/*
-const d = new Date('7 January 1985, 3:08:19')
 
+const d = new Date('7 January 1985, 3:08:19')
 console.log(format(d, 'HH(mm)ss [dd] <MMM>')) // -> '03(08)19 [07] <Jan>'
-*/
