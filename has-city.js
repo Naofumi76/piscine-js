@@ -9,7 +9,7 @@ function hasCity(country, arr) {
     }
 }
 
-const citiesInUSA = ["New York", "Los Angeles", "Chicago", "Houston"]
+/* const citiesInUSA = ["New York", "Los Angeles", "Chicago", "Houston"]
 const isCityInUSA = hasCity("USA", citiesInUSA)
 console.log(isCityInUSA("Chicago"))
-console.log(isCityInUSA("Paris"))
+console.log(isCityInUSA("Paris")) */
