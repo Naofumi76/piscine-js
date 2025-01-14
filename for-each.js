@@ -3,7 +3,7 @@ function forEach(callback, arr) {
         return
     }
     for (let i = 0; i < arr.length; i++) {
-        callback(arr[i])
+        arr[i] = callback(arr[i], i, arr)
     }
 }
 
