@@ -1,4 +1,7 @@
 function forEach(callback, arr) {
+    if (!Array.isArray(arr) || typeof callback !== 'function') {
+        return
+    }
     for (let i = 0; i < arr.length; i++) {
         callback(arr[i], i, arr)
     }
