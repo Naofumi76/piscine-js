@@ -1,12 +1,6 @@
 function forEach(callback, arr) {
-    if (!Array.isArray(arr) || typeof callback !== 'function') {
-        throw new Error('The function needs a function and an array')
-    }
     for (let i = 0; i < arr.length; i++) {
-        const result = callback(arr[i], i, arr)
-        if (result !== undefined) {
-            arr[i] = result
-        }
+        callback(arr[i], i, arr)
     }
 }
 
