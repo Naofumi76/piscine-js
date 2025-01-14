@@ -26,7 +26,7 @@ function flat(arr, depth=0) {
     return result
 }
 
-const array1 = [1, 4, 9, 16];
+/* const array1 = [1, 4, 9, 16];
 
 // Pass a function to map
 function mult2(arg) {
@@ -41,4 +41,4 @@ const arr1 = [1, 2, 1];
 const result = flatMap(arr1, (num) => (num === 2 ? [2, 2] : 1))
 
 console.log(result);
-// Expected output: Array [1, 2, 2, 1]
+// Expected output: Array [1, 2, 2, 1] */
