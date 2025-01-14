@@ -7,8 +7,22 @@ function forEach(callback, arr) {
     }
 }
 
+const testArr = [1, 2, 3]
+var result = []
+forEach(value => result.push(value), testArr)
+console.log(result)
 
-const arr = [1, 2, 3, 4, 5]
+const ctx = {
+    arr: [1, 2, 3, 4, 5, 0.31087952857109147, 7, 10, -10, 20, -95]
+}
+result = []
+const returned = forEach(value => result.push(value), ctx.arr)
+console.log(returned)
+console.log(result)
+
+
+
+/* const arr = [1, 2, 3, 4, 5]
 function show(number) {
     console.log(number)
 }
@@ -23,4 +37,4 @@ forEach(add1, arr)
 console.log(arr)
 forEach(show, arr)
 forEach(remove1, arr)
-console.log(arr)
+console.log(arr) */
