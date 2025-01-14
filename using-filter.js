@@ -33,7 +33,7 @@ function filter1DistinctVowel(arr) {
         throw new TypeError('Input must be an array');
     }
     return arr.filter(state => {
-        const vowels = state.match(/[AEIOUaeiou]/g) || [];
+        const vowels = state.toLowerCase().match(/[AEIOUaeiou]/g) || [];
         const distinctVowels = [...new Set(vowels)].length;
         // Set contains only unique values, which means that it should contain only 1 value inside
         return distinctVowels === 1;
