@@ -29,14 +29,14 @@ console.log(upperCasingStates(["test","PLUSIEURS mots", "123test"]))
 
 function fahrenheitToCelsius(arr) {
     if (!Array.isArray(arr)) {
-        throw new TypeError('Input must be an array');
+        throw new TypeError('Input must be an array')
     }
     return arr.map(temp => {
         const tempFahr = parseInt(temp.replace('F', ''), 10)
 
         const cels = (tempFahr - 32) * 5 / 9
         
-        return `${cels.toFixed(0)}°C`
+        return `${Math.floor(cels)}°C`
     });
 }
 
@@ -47,7 +47,7 @@ function trimTemp(arr) {
     if (!Array.isArray(arr)) {
         throw new TypeError('Input must be an array');
     }
-    return arr.map(temp => temp.temperature.trim().replace(/\s+/g, ''));
+    return arr.map(temp => temp.temperature.trim().replace(/\s+/g, ''))
 }
 
 console.log(trimTemp([
