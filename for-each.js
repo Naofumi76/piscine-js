@@ -1,14 +1,12 @@
 function forEach(callback, arr) {
-    if (typeof callback !== 'function') {
-        if(!Array.isArray(arr)) {
-            return
-        } 
-        return arr
+    if (typeof callback !== 'function' || !Array.isArray(arr)) {
+        return
     }
     for (let i = 0; i < arr.length; i++) {
         callback(arr[i], i, arr)
     }
 }
+
 
 const arr = [1, 2, 3, 4, 5]
 function show(number) {
