@@ -11,7 +11,7 @@ function map(arr, func) {
 }
 
 function flatMap(arr, func) {
-    return flat(map(arr, func), 1)
+    return flat(map(arr, func), 2)
 }
 
 function flat(arr, depth=0) {
@@ -27,6 +27,7 @@ function flat(arr, depth=0) {
     return result
 }
 
+console.log(flatMap([1, 2, 3], (n) => [n, n]));
 /* const array1 = [1, 4, 9, 16];
 
 // Pass a function to map
