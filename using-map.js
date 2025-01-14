@@ -47,7 +47,10 @@ function trimTemp(arr) {
     if (!Array.isArray(arr)) {
         throw new TypeError('Input must be an array');
     }
-    return arr.map(temp => temp.temperature.trim().replace(/\s+/g, ''))
+    arr.forEach(obj => {
+        obj.temperature = obj.temperature.trim().replace(/\s+/g, '');
+    })
+    return arr
 }
 
 console.log(trimTemp([
