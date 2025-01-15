@@ -1,10 +1,10 @@
 function currify(func) {
     return function curried (...args) {
         if (args.length >= func.length) {
-            return curried (...args)
+            return func (...args)
         } else {
             return function (...nextarg) {
-                return func(...args, ...nextarg)
+                return curried(...args, ...nextarg)
             }
         }
     }
