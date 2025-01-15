@@ -4,7 +4,7 @@ function currify(func) {
             return curried (...args)
         } else {
             return function (...nextarg) {
-                return func(...args, ...nextarg)
+                return curried(...args, ...nextarg)
             }
         }
     }
