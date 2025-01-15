@@ -1,9 +1,12 @@
 function currify(func) {
-    return function (...args) {
+    return function curried (...args) {
         if (args.length >= func.length) {
-            return func(...args)
+            return curried (...args)
+        } else {
+            return function (...nextarg) {
+                return func(...args, ...nextarg)
+            }
         }
-        return (...moreArgs) => curried(...args,...moreArgs)
     }
 }
 
