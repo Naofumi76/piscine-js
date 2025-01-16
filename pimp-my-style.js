@@ -14,7 +14,7 @@ export function pimp() {
         button.classList.remove(styles[stylesIndex - 1])
         stylesIndex--
         if (stylesIndex === 0) {
-            button.textContent = 'pimp my style'
+            button.classList.remove('unpimp')
             unpimping = false
         }
     }
