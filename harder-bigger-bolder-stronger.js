@@ -9,9 +9,9 @@ export function generateLetters() {
         var letterDiv = document.createElement('div')
         letterDiv.textContent = choosenLetters[i]
         letterDiv.style.fontSize = String(fontSize) + 'px'
-        if (i < Math.round(letters.length/3)) {
+        if (i < 40) {
             letterDiv.style.fontWeight = '300'
-        } else if (i < Math.round((letters.length/3)*2)) {
+        } else if (i < 80) {
             letterDiv.style.fontWeight = '400'
         } else {
             letterDiv.style.fontWeight = '600'
