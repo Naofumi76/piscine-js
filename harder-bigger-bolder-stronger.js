@@ -1,7 +1,7 @@
-var fontSize = 10
 export function generateLetters() {
     var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var choosenLetters = []
+    var fontSize = 11
     for (let i = 0; i < 120; i++) {
         choosenLetters.push(letters[Math.floor(Math.random() * letters.length)]);
     }
