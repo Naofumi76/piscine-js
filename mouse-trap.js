@@ -29,9 +29,9 @@ export function moveCircle() {
             lastCircle.style.left = `${newX}px`
             lastCircle.style.top = `${newY}px`
             if (isInBox(lastCircle, box)) {
-                lastCircle.style.backgroundColor = 'var(--purple)'
+                lastCircle.style.background = 'var(--purple)'
             } else {
-                lastCircle.style.backgroundColor = 'white'
+                lastCircle.style.background = 'white'
             }
         }
     })
