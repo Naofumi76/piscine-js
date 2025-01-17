@@ -25,11 +25,13 @@ export function pick() {
   
     const axisX = document.createElementNS("http://www.w3.org/2000/svg", "line")
     axisX.setAttribute("id", "axisX")
-
+    axisX.setAttribute("stroke", "black")
+    axisX.setAttribute("stroke-width", "2")
   
     const axisY = document.createElementNS("http://www.w3.org/2000/svg", "line")
     axisY.setAttribute("id", "axisY")
-
+    axisY.setAttribute("stroke", "black")
+    axisY.setAttribute("stroke-width", "2")
   
     svg.appendChild(axisX)
     svg.appendChild(axisY)
@@ -52,9 +54,9 @@ export function pick() {
         var color = Math.round(event.clientX/window.innerWidth*360)
         var opacity = Math.round(event.clientY/window.innerHeight*100)
         document.body.style.background = `hsl(${color}, 50%, ${opacity}%)`
-        colorHslDiv.textContent = `HSL: ${color}, 50%, ${opacity}`
-        colorHueDiv.textContent = `Hue: 50%`
-        colorLightDiv.textContent = `Luminosity: ${opacity}%`
+        colorHslDiv.textContent = `hsl(${color}, 50%, ${opacity})`
+        colorHueDiv.textContent = `hue\n${color}`
+        colorLightDiv.textContent = `luminosity\n${opacity}%`
     })
 
     document.addEventListener('click', () => {
