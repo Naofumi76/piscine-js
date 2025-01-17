@@ -25,10 +25,14 @@ export function moveCircle() {
             if (isInBox(lastCircle, box)) {
                 newX = Math.max(boxRect.left + 1, Math.min(newX, boxRect.right - circleSize - 1))
                 newY = Math.max(boxRect.top + 1, Math.min(newY, boxRect.bottom - circleSize - 1))
-                lastCircle.style.background = 'var(--purple)'
             }
             lastCircle.style.left = `${newX}px`
             lastCircle.style.top = `${newY}px`
+            if (isInBox(lastCircle, box)) {
+                lastCircle.style.backgroundColor = 'var(--purple)'
+            } else {
+                lastCircle.style.backgroundColor = 'white'
+            }
         }
     })
 }
