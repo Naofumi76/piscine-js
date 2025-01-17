@@ -1,44 +1,52 @@
+let lastCircle
 export function createCircle() {
     document.addEventListener('click', event => {
         var circle = document.createElement('div')
         circle.classList.add('circle')
-        circle.style.left = `${event.clientX}px`
-        circle.style.top = `${event.clientY}px`
+        circle.style.left = `${event.clientX-25}px`
+        circle.style.top = `${event.clientY-25}px`
         circle.style.backgroundColor = 'white'
+        lastCircle = circle
         document.body.appendChild(circle)
     })
 }
 
 export function moveCircle() {
-    document.addEventListener('mousemove', event => {
-        var circles = document.querySelectorAll('.circle')
-        var lastCircle = circles[circles.length - 1]
-        lastCircle.style.left = `${event.clientX}px`
-        lastCircle.style.top = `${event.clientY}px`
-
-        var box = document.querySelector('.box')
-        var boxRect = box.getBoundingClientRect()
-        var circleRect = lastCircle.getBoundingClientRect()
-        if (circleRect.left < boxRect.left ||
-            circleRect.right > boxRect.right ||
-            circleRect.top < boxRect.top ||
-            circleRect.bottom > boxRect.bottom) {
-                lastCircle.style.backgroundColor = 'purple'
-                setTimeout(() => {
-                    lastCircle.style.backgroundColor = 'white'
-                }, 1000)
+    document.addEventListener("mousemove", event => {
+        const circles = document.querySelectorAll(".circle")
+        const box = document.querySelector(".box")
+        const boxRect = box.getBoundingClientRect()
+        if (circles.length > 0) {
+            const lastCircle = circles[circles.length - 1]
+            const circleRect = lastCircle.getBoundingClientRect()
+            const circleSize = circleRect.width
+            let newX = event.clientX - circleSize / 2
+            let newY = event.clientY - circleSize / 2
+            if (isInBox(lastCircle, box)) {
+                newX = Math.max(boxRect.left + 1, Math.min(newX, boxRect.right - circleSize - 1))
+                newY = Math.max(boxRect.top + 1, Math.min(newY, boxRect.bottom - circleSize - 1))
+                lastCircle.style.background = 'var(--purple)'
             }
+            lastCircle.style.left = `${newX}px`
+            lastCircle.style.top = `${newY}px`
+        }
     })
+}
+
+export function isInBox(circle, box) {
+    var boxRect = box.getBoundingClientRect()
+    var circleRect = circle.getBoundingClientRect()
+    return (
+        circleRect.left >= boxRect.left + 1 &&
+        circleRect.left <= boxRect.right - 1 &&
+        circleRect.top >= boxRect.top + 1 &&
+        circleRect.top <= boxRect.bottom - 1
+      )
 }
 
 export function setBox() {
     var box = document.createElement('div')
-    box.style.height = '200px'
-    box.style.width = '200px'
-    box.style.position = 'absolute'
-    box.style.left = '50%'
-    box.style.top = '50%'
-    box.style.transform = 'translate(-50%, -50%)'
-    box.style.border = '2px solid red'
+    box.classList.add('box')
     document.body.appendChild(box)
 }
+
