@@ -57,21 +57,17 @@ export function getImageByName(name) {
 }
 
 export function sortNorthToSouth() {
-    var northPart = places.filter(place => place.coordinates.includes("N"))
-    var southPart = places.filter(place => place.coordinates.includes("S"))
-    northPart.sort((a, b) => {
-        var cordsA=  a.coordinates.split("°")
-        var cordsB = b.coordinates.split("°")
-        var latA = Number(cordsA[0]) + Number(cordsA[1]) / 60
-        var latB = Number(cordsB[0]) + Number(cordsB[1]) / 60
-        return latA - latB
+    let north_places = places.filter((place) => place.coordinates.includes("N"))
+    let south_places = places.filter((place) => place.coordinates.includes("S"))
+    north_places.sort((a, b) => {
+        var latA = parseInt(a.coordinates.split("°")[0]) + parseInt(a.coordinates.split("°")[1]) / 60
+        var latB = parseInt(b.coordinates.split("°")[0]) + parseInt(b.coordinates.split("°")[1]) / 60
+      return latB - latA;
     })
-    southPart.sort((a, b) => {
-        var cordsA=  a.coordinates.split("°")
-        var cordsB = b.coordinates.split("°")
-        var latA = Number(cordsA[0]) + Number(cordsA[1]) / 60
-        var latB = Number(cordsB[0]) + Number(cordsB[1]) / 60
-        return latB - latA
+    south_places.sort((a, b) => {
+        var latA = parseInt(a.coordinates.split("°")[0]) + parseInt(a.coordinates.split("°")[1]) / 60
+        var latB = parseInt(b.coordinates.split("°")[0]) + parseInt(b.coordinates.split("°")[1]) / 60
+      return latA - latB
     })
-    return [...northPart,...southPart]
+    return [...north_places, ...south_places]
 }
