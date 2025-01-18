@@ -2,14 +2,11 @@ import { places } from "./where-do-we-go.data.js"
 
 export function explore() {
     var sortedPlaces = sortNorthToSouth()
+    console.log(sortedPlaces)
     sortedPlaces.forEach(place => {
         var section = document.createElement('section')
         var image = getImageByName(place.name)
         console.log(image)
-        console.log(`${place.name
-            .split(",")[0]
-            .toLowerCase()
-            .replaceAll(" ", "-")}`)
         section.style.background = `url(./where-do-we-go_images/${image})`
         section.style.backgroundSize = "cover"
         section.style.backgroundPosition = "center"
@@ -53,7 +50,7 @@ export function getImageByName(name) {
     if (!name) {
         return
     }
-    return (name.split(',')[0].toLowerCase().replace(' ', '-') + '.jpg')
+    return (name.split(',')[0].toLowerCase().replaceAll(' ', '-') + '.jpg')
 }
 
 export function sortNorthToSouth() {
