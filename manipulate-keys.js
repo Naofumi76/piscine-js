@@ -16,14 +16,17 @@ function mapKeys(obj, func) {
     return result
 }
 
-function reduceKeys(obj, func, acc = Object.keys(obj)[0]) {
-    let result = acc
+function reduceKeys(obj, func, start) {
     let keys = Object.keys(obj);
-    for (let i = 1; i < keys.length; i++) {
-        const key = keys[i];
-        result = func(result, key);
+    if (start === undefined) {
+        return keys.reduce((acc, key, index) => {
+            return index === 0 ? key : func(acc, key) 
+        })
+    } else {
+        return keys.reduce((acc, key) => {
+            return func(acc, key);
+        }, start)
     }
-    return result
 }
 
 const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
