@@ -23,7 +23,7 @@ function reduceKeys(obj, func, acc = '') {
         const key = keys[i];
         result = func(result, key);
     }
-    return result.slice(2)
+    return result
 }
 
 const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
