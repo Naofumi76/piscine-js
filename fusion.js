@@ -12,8 +12,8 @@ function fusion(obj1, obj2) {
                 objFinal[key] = valueObj1 + ' ' + valueObj2
             } else if (typeof valueObj1 === 'number' && typeof valueObj2 === 'number') {
                 objFinal[key] = valueObj1 + valueObj2
-            } else if (typeof valueObj1 === 'object' && typeof valueObj2 === 'object') {
-                objFinal[key] = fusion(valueObj1, valueObj2)
+            } else {
+                objFinal[key] = valueObj2
             }
         } else {
             objFinal[key] = valueObj1 || valueObj2
@@ -22,4 +22,4 @@ function fusion(obj1, obj2) {
     return objFinal
 }
 
-console.log(fusion({ a: 1, b: { c: "Salem" } }, { a: 10, x: [], b: { c: "alem" } })); // -> { a: 11, x: [], b: { c: 'Salem alem' } }
+console.log(fusion({ a: { b: 1 } }, { a: 1 }).a, 1); // -> { a: 11, x: [], b: { c: 'Salem alem' } }
