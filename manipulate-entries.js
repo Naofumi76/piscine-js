@@ -24,3 +24,15 @@ function reduceEntries(obj, func, acc) {
     }
     return result
 }
+
+function totalCalories(obj) {
+    return reduceEntries(obj, (acc, [food, calories]) => acc + calories, 0)
+}
+
+function lowCarbs(obj) {
+    return filterEntries(obj, ([food, calories]) => calories <= 50)
+}
+
+function cartTotal(obj) {
+    return reduceEntries(obj, (acc, [food, calories]) => acc + calories, 0)
+}
