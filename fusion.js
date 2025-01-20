@@ -12,6 +12,8 @@ function fusion(obj1, obj2) {
                 objFinal[key] = valueObj1 + ' ' + valueObj2
             } else if (typeof valueObj1 === 'number' && typeof valueObj2 === 'number') {
                 objFinal[key] = valueObj1 + valueObj2
+            } else if (typeof valueObj1 === 'object' && typeof valueObj2 === 'object') {
+                objFinal[key] = fusion(valueObj1, valueObj2)
             } else {
                 objFinal[key] = valueObj2
             }
