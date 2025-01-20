@@ -2,7 +2,7 @@ function pick(obj, strOrArray) {
     if (typeof strOrArray ==='string') {
         var objet = {}
         for (var key in obj) {
-            if (key === strOrArray) {
+            if (obj.hasOwnProperty(key) && key === strOrArray) {
                 objet[key] = obj[key]
             }
         }
@@ -11,7 +11,7 @@ function pick(obj, strOrArray) {
     if (Array.isArray(strOrArray)) {
         var result = {}
         for (var key in obj) {
-            if (strOrArray.includes(key)) {
+            if (obj.hasOwnProperty(key) && strOrArray.includes(key)) {
                 result[key] = obj[key]
             }
         }
@@ -24,7 +24,7 @@ function omit(obj, strOrArray) {
     if (typeof strOrArray ==='string') {
         var objet = {}
         for (var key in obj) {
-            if (key!== strOrArray) {
+            if (obj.hasOwnProperty(key) && key!== strOrArray) {
                 objet[key] = obj[key]
             }
         }
@@ -33,7 +33,7 @@ function omit(obj, strOrArray) {
     if (Array.isArray(strOrArray)) {
         var result = {}
         for (var key in obj) {
-            if (!strOrArray.includes(key)) {
+            if (obj.hasOwnProperty(key) && !strOrArray.includes(key)) {
                 result[key] = obj[key]
             }
         }
@@ -41,3 +41,6 @@ function omit(obj, strOrArray) {
     }
     throw new Error('Invalid input. Expected a string or an array.')
 }
+
+/* const result = omit({ something: 5, __proto__: { d: 6 } }, 'something');
+console.log(result); // Expected output: {} */
