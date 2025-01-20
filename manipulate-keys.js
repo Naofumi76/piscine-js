@@ -16,10 +16,10 @@ function mapKeys(obj, func) {
     return result
 }
 
-function reduceKeys(obj, func, acc = '') {
+function reduceKeys(obj, func, acc = Object.keys(obj)[0]) {
     let result = acc
     let keys = Object.keys(obj);
-    for (let i = 0; i < keys.length; i++) {
+    for (let i = 1; i < keys.length; i++) {
         const key = keys[i];
         result = func(result, key);
     }
