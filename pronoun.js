@@ -1,7 +1,7 @@
 function pronoun(str) {
     var pronouns = ['i', 'you', 'he', 'she', 'it', 'they', 'we']
     var result = {}
-    wordsArray = str.toLowerCase().split(' ').map(word => word.replace(/[^a-zA-Z0-9]/g, ''))
+    var wordsArray = str.toLowerCase().split(' ').map(word => word.replace(/[^a-zA-Z0-9]/g, ''))
     for (var i = 0; i < wordsArray.length; i++) {
         if (pronouns.includes(wordsArray[i])) {
             if (!result[wordsArray[i]]) {
