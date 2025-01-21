@@ -58,15 +58,16 @@ function mapAverage(personnel) {
     calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
 } */
 
-console.log(mapAverage(personnel))
+/* console.log(mapAverage(personnel))
 
 console.log(reduceScore(personnel))
 console.log(reduceScore(personnel, 420))
 
-console.log(filterForce(personnel))
+console.log(filterForce(personnel)) */
 
 
-console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel)
+/* console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel) */
+
 // output
 /* {
   lukeSkywalker_force: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
@@ -77,16 +78,17 @@ console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel)
 } */
 )
 
-console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0))
+/* console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0)) */
 // output
 /* 6 */
 
 
-console.log(filterCurry(([k, v]) => typeof v === 'string' || k === 'arr')({
+/* console.log(filterCurry(([k, v]) => typeof v === 'string' || k === 'arr')({
     str: 'string',
     nbr: 1,
     arr: [1, 2],
   })
+) */
+
   // output
 /*   { str: 'string', arr: [1, 2] } */
-  )
