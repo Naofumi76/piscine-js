@@ -8,7 +8,9 @@ function replica(targetObj, ...otherObj) {
                     } else if (obj[key] instanceof RegExp) {
                         targetObj[key] = new RegExp(obj[key])
                     } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-                        targetObj[key] = Array.isArray(obj[key])? [] : {}
+                        if (!targetObj[key] || typeof targetObj[key] !== 'object' || Array.isArray(targetObj[key]) !== Array.isArray(obj[key])) {
+                            targetObj[key] = Array.isArray(obj[key]) ? [] : {};
+                        }
                         replica(targetObj[key], obj[key])
                     } else {
                         targetObj[key] = obj[key]
