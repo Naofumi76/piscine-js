@@ -19,3 +19,11 @@ function replica(targetObj, ...otherObj) {
     }
     return targetObj
 }
+
+/* const result = replica(
+    {},
+    Object.freeze({ line: 'Replicants are like any other machine' }),
+    Object.freeze({ author: 'Rich' })
+);
+
+console.log(result); */
