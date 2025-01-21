@@ -66,7 +66,7 @@ console.log(reduceScore(personnel, 420))
 console.log(filterForce(personnel)) */
 
 
-/* console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel) */
+/* console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel)) */
 
 // output
 /* {
@@ -76,7 +76,6 @@ console.log(filterForce(personnel)) */
   ezraBridger_force:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
   calebDume_force:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
 } */
-)
 
 /* console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0)) */
 // output
