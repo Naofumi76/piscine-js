@@ -26,13 +26,13 @@ function filterCurry(func) {
     }
 }
 
-function reduceScore(personnel) {
+function reduceScore(personnel, initVal = 0) {
     return reduceCurry((acc, [key, value]) => {
         if (value.isForceUser) {
             acc += value.pilotingScore + value.shootingScore
         }
         return acc;
-    })(personnel, 0)
+    })(personnel, initVal)
 }
 
 
@@ -61,6 +61,7 @@ function mapAverage(personnel) {
 console.log(mapAverage(personnel))
 
 console.log(reduceScore(personnel))
+console.log(reduceScore(personnel, 420))
 
 console.log(filterForce(personnel))
 
