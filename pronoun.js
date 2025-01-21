@@ -1,7 +1,7 @@
 function pronoun(str) {
     var pronouns = ['i', 'you', 'he', 'she', 'it', 'they', 'we']
     var result = {}
-    var wordsArray = str.toLowerCase().split(' ').map(word => word.replace(/[^a-zA-Z0-9]/g, ''))
+    var wordsArray = str.toLowerCase().split(/\s+/).map(word => word.replace(/[^a-zA-Z0-9]/g, ''))
     for (var i = 0; i < wordsArray.length; i++) {
         if (pronouns.includes(wordsArray[i])) {
             if (!result[wordsArray[i]]) {
@@ -17,6 +17,10 @@ function pronoun(str) {
     return result;
 }
 
-/* const ex = 'Using Array Destructuring, you you can iterate through objects easily. i'
+/* const ex = 'Using Array Destructuring, you you can iterate through objects easily. i' */
 
-console.log(pronoun(ex)) */
+console.log(pronoun('I buy,\ni to,\nYOU buy,\nit have,\nIt buys,\nit is,\nyou go'), {
+    i: { word: ['buy', 'to'], count: 2 },
+    you: { word: ['buy', 'go'], count: 2 },
+    it: { word: ['have', 'buys', 'is'], count: 3 },
+  })
