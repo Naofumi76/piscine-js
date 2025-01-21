@@ -7,7 +7,7 @@ function replica(targetObj, ...otherObj) {
                         targetObj[key] = new Date(obj[key])
                     } else if (obj[key] instanceof RegExp) {
                         targetObj[key] = new RegExp(obj[key])
-                    } else if (typeof obj[key] === 'object') {
+                    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
                         if (!targetObj[key] || typeof targetObj[key] !== 'object' || typeof targetObj[key] !== typeof obj[key]) {
                             targetObj[key] = Array.isArray(obj[key])? [] : {}
                         }
