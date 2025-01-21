@@ -16,10 +16,10 @@ function reduceEntries(obj, func, acc) {
 }
 
 function totalCalories(obj) {
-    return reduceEntries(obj, (acc, key) => {
+    return Number(reduceEntries(obj, (acc, key) => {
         var result = (nutritionDB[key[0]]["calories"] / 100) * key[1]
         return acc + result
-    },0).toFixed(1)
+    },0).toFixed(1))
 }
 
 function lowCarbs(obj) {
