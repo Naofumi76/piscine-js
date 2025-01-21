@@ -1,11 +1,6 @@
 function filterEntries(obj, func) {
-    let result = {}
-    for (let [key, value] of Object.entries(obj)) {
-        if (func(key, value)) {
-            result[key] = value
-        }
-    }
-    return result
+    return Object.fromEntries(Object.entries(obj).filter(([key, value]) => func([key, value])
+    ))
 }
 
 function mapEntries(obj, func) {
@@ -33,7 +28,7 @@ function totalCalories(obj) {
 }
 
 function lowCarbs(obj) {
-    return filterEntries(obj, (key, value) => {
+    return filterEntries(obj, ([key, value]) => {
         return (nutritionDB[key].carbs / 100 * value) < 50
     })
 }
@@ -68,5 +63,6 @@ console.log(totalCalories(groceriesCart))
 console.log('Items with low carbs:')
 console.log(lowCarbs(groceriesCart))
 console.log('Total cart nutritional facts:')
-console.log(cartTotal(groceriesCart)) */
+console.log(cartTotal(groceriesCart))
+console.log(filterEntries(groceriesCart, ([, v]) => v < 300)) */
 
