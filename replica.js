@@ -1,7 +1,7 @@
 function replica(targetObj, ...otherObj) {
     for (var obj of otherObj){
-        if (typeof obj === 'object') {
-            for (var key of obj) {
+        if (obj && typeof obj === 'object') {
+            for (var key of Object.keys(obj)) {
                 if (obj.hasOwnProperty(key)) {
                     if (obj[key] instanceof Date) {
                         targetObj[key] = new Date(obj[key])
