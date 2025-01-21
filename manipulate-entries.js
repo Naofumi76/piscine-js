@@ -4,12 +4,7 @@ function filterEntries(obj, func) {
 }
 
 function mapEntries(obj, func) {
-    let result = {}
-    for (let [key, value] of Object.entries(obj)) {
-        var [newKey, newValue] = func(key, value)
-        result[newKey] = newValue
-    }
-    return result
+    return Object.fromEntries(Object.entries(obj).map(([key, value]) => func([key, value])))
 }
 
 function reduceEntries(obj, func, acc) {
@@ -64,5 +59,8 @@ console.log('Items with low carbs:')
 console.log(lowCarbs(groceriesCart))
 console.log('Total cart nutritional facts:')
 console.log(cartTotal(groceriesCart))
-console.log(filterEntries(groceriesCart, ([, v]) => v < 300)) */
-
+console.log(mapEntries(groceriesCart, ([k, v]) => [
+    v > 250 ? `✔️${k}` : `❌${k}`,
+    v - 250,
+  ]),
+) */
