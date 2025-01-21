@@ -49,7 +49,7 @@ function cartTotal(obj) {
     }
     return result
 }
-const nutritionDB = {
+/* const nutritionDB = {
     tomato:  { calories: 18,  protein: 0.9,   carbs: 3.9,   sugar: 2.6, fiber: 1.2, fat: 0.2   },
    vinegar: { calories: 20,  protein: 0.04,  carbs: 0.6,   sugar: 0.4, fiber: 0,   fat: 0     },
     oil:     { calories: 48,  protein: 0,     carbs: 0,     sugar: 123, fiber: 0,   fat: 151   },
@@ -68,5 +68,5 @@ console.log(totalCalories(groceriesCart))
 console.log('Items with low carbs:')
 console.log(lowCarbs(groceriesCart))
 console.log('Total cart nutritional facts:')
-console.log(cartTotal(groceriesCart))
+console.log(cartTotal(groceriesCart)) */
 
