@@ -7,7 +7,7 @@ function pronoun(str) {
             if (!result[wordsArray[i]]) {
                 result[wordsArray[i]] = { word : [], count : 0}
             }
-            if (i === wordsArray.length - 1 || pronouns.includes(wordsArray[i+1])) {
+            if (i === wordsArray.length - 1) {
                 continue
             }
             result[wordsArray[i]].word.push(wordsArray[i + 1])
