@@ -17,6 +17,6 @@ function pronoun(str) {
     return result;
 }
 
-const ex = 'Using Array Destructuring, you you can iterate through objects easily. i'
+/* const ex = 'Using Array Destructuring, you you can iterate through objects easily. i'
 
-console.log(pronoun(ex))
+console.log(pronoun(ex)) */
