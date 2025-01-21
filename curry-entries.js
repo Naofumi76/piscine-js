@@ -37,7 +37,7 @@ function reduceScore(personnel, initVal = 0) {
 
 
 function filterForce(personnel) {
-    return filterCurry(([key, value]) => value.isForceUser && value.shootingScore <= 80)(personnel)
+    return filterCurry(([key, value]) => (value.isForceUser && value.shootingScore <= 80))(personnel)
 }
 
 function mapAverage(personnel) {
@@ -50,20 +50,20 @@ function mapAverage(personnel) {
 
 
 
-/* const personnel = {
+const personnel = {
     lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
     sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
     zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
     ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
     calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
-} */
+}
 
 /* console.log(mapAverage(personnel))
 
 console.log(reduceScore(personnel))
-console.log(reduceScore(personnel, 420))
+console.log(reduceScore(personnel, 420)) */
 
-console.log(filterForce(personnel)) */
+console.log(filterForce(personnel))
 
 
 /* console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel)) */
