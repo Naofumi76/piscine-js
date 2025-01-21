@@ -1,5 +1,7 @@
-function defaultCurry(obj1, obj2) {
-    return Object.assign({}, obj1, obj2);
+function defaultCurry(obj1) {
+    return function(obj2) {
+        return Object.assign({}, obj1, obj2);
+    }
 }
 
 function mapCurry(func) {
