@@ -9,14 +9,6 @@ function debounce(func, delay) {
 }
 
 function opDebounce(func, delay, leading) {
-    if (leading) {
-        return debounce(func, 0)
-    } else {
-        return debounce(func, delay)
-    }
-}
-
-/* function opDebounce(func, delay) {
     var debounceTimer
     var hasLeading = false
     return function () {
@@ -33,7 +25,7 @@ function opDebounce(func, delay, leading) {
             func.apply(context, args)
         }, delay)
     }
-} */
+}
 
 function printing() {
     console.log("Printing!")
