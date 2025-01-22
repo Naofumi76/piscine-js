@@ -9,17 +9,30 @@ function throttle(func, delay) {
     }
 }
 
-function opThrottle(func, delay, { leading , trailing } = {}) {
-    if (!leading && !trailing) {
-        return throttle(func, delay)
-    } else {
-        if (leading) {
-            func.apply(this, arguments)
+
+function opThrottle(fn, delay, { leading = false, trailing = true } = {}) {
+    var last = 0
+    var timer = null
+    return function () {
+        var now = new Date()
+        if (!last && leading === false) {
+            last = now
         }
-        if (trailing) {
-            setTimeout(() => func.apply(this, arguments), delay)
+        if (now - last > delay) {
+            if (timer) {
+                clearTimeout(timer)
+                timer = null
+            }
+            fn.apply(this, arguments)
+            last = now
+        } else if (!timer && trailing !== false) {
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+                last = new Date()
+                timer = null
+            }, delay)
         }
-    }
+    };
 }
 
 const throttledLog = throttle(
