@@ -9,6 +9,24 @@ function throttle(func, delay) {
     }
 }
 
+function opThrottle(func, delay, trailing, leading) {
+    if (trailing) {
+        let debounceTimer
+        return function () {
+            const context = this
+            const args = arguments
+            if (!trailing) {
+                if (leading) {
+                    func.apply(context, args)
+                }
+                clearTimeout(debounceTimer)
+                debounceTimer = setTimeout(() => func.apply(context, args), delay)
+            }
+        }
+    }
+
+}
+
 /* function printing() {
     console.log("Printing!")
 }

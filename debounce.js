@@ -9,21 +9,10 @@ function debounce(func, delay) {
 }
 
 function opDebounce(func, delay, leading) {
-    var debounceTimer
-    var hasLeading = false
-    return function () {
-        const context = this
-        const args = arguments
-        clearTimeout(debounceTimer)
-        if (leading && !hasLeading) {
-            func.apply(context, args)
-            hasLeading = true
-            return
-        }
-        debounceTimer = setTimeout(() => {
-            hasLeading = false
-            func.apply(context, args)
-        }, delay)
+    if (leading) {
+        return debounce(func, 0)
+    } else {
+        return debounce(func, delay)
     }
 }
 
