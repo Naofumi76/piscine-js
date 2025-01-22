@@ -8,6 +8,7 @@ function pronoun(str) {
                 result[wordsArray[i]] = { word : [], count : 0}
             }
             if (i === wordsArray.length - 1) {
+                result[wordsArray[i]].count++
                 continue
             }
             if (!pronouns.includes(wordsArray[i+1])) {
@@ -21,8 +22,7 @@ function pronoun(str) {
 
 /* const ex = 'Using Array Destructuring, you you can iterate through objects easily. i' */
 
-/* console.log(pronoun(`it i it she is gone`), {
-    it: { word: [], count: 2 },
-    i: { word: [], count: 1 },
-    she: { word: ['is'], count: 1 },
+/* console.log(pronoun('we will rock you'), '\n',{
+    we: { word: ['will'], count: 1 },
+    you: { word: [], count: 1 },
   }) */
