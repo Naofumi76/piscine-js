@@ -16,6 +16,25 @@ function opDebounce(func, delay, leading) {
     }
 }
 
+/* function opDebounce(func, delay) {
+    var debounceTimer
+    var hasLeading = false
+    return function () {
+        const context = this
+        const args = arguments
+        clearTimeout(debounceTimer)
+        if (leading && !hasLeading) {
+            func.apply(context, args)
+            hasLeading = true
+            return
+        }
+        debounceTimer = setTimeout(() => {
+            hasLeading = false
+            func.apply(context, args)
+        }, delay)
+    }
+} */
+
 function printing() {
     console.log("Printing!")
 }
