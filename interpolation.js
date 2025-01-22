@@ -1,19 +1,16 @@
-function interpolation({ step, start, end, callback, duration } = {}) {
-    if (step <= 0) {
-        throw new Error("Step must be greater than 0");
-    }
-    if (duration <= 0) {
-        throw new Error("Duration must be greater than 0");
-    }
-    const interval = duration / step
-    const deltaX = (end - start) / step
-    for (let i = 0; i < step; i++) {
-        const x = start + i * deltaX
-        const y = i * interval
-        setTimeout(() => {
-            callback([x, y]);
-        }, i * interval);
-    }
+function interpolation({ step = 0, start =0, end=0, callback=()=>{}, duration =0} = {}) {
+    var deltaX = (end - start) / step
+    var actual = start
+    var index = 0
+    var timeout = setInterval(()=> {
+        if (index < step) {
+            clearInterval(timeout)
+            return
+        }
+        actual += deltaX
+        callback([actual.toFixed(2), index])
+        index++
+    })
 }
 
 
