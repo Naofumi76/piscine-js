@@ -74,7 +74,7 @@ async function isWinner(str) {
         year = countryResults[i].year
         score = countryResults[i].score
     }
-    return `${str} won the FIFA World Cup in ${year} winning by ${score}`
+    return `${str} won the FIFA World Cup in ${year.slice(0)} winning by ${score.slice(0)}`
 }
 
 
