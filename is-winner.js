@@ -1,4 +1,4 @@
-
+/* 
 const db = (() => {
     //countries that won the FIFA World Cup
     const countries = [
@@ -53,7 +53,7 @@ const db = (() => {
       addCountry: (country) => countries.push(country),
       addResults: (result) => results.push(result),
     }
-  })()
+  })() */
   
 async function isWinner(str) {
     if (str) {
