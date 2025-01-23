@@ -7,7 +7,7 @@ function retry(count=3, callback = async () => {}) {
                 if (count > 0) {
                     retry(count-1, callback)(...args)
                 } else {
-                    throw error
+                    throw new Error
                 }
             }
         }
