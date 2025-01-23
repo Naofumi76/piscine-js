@@ -1,8 +1,8 @@
 async function queryServers(serverName, q) {
     var newServerName = serverName.replaceAll(' ', '+')
     var newQ = q.replaceAll(' ', '+')
-    var urlServ = `http://${newServerName}?q=${newQ}` 
-    var urlBackup = `http://${newServerName}_backup?q=${newQ}`
+    var urlServ = `/${newServerName}?q=${newQ}` 
+    var urlBackup = `/${newServerName}_backup?q=${newQ}`
     return await Promise.race([getJSON(urlServ), getJSON(urlBackup)])
 }
 
