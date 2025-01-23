@@ -1,4 +1,4 @@
-async function queryServer(serverName, q) {
+async function queryServers(serverName, q) {
     var newServerName = serverName.replaceAll(' ', '+')
     var newQ = q.replaceAll(' ', '+')
     var urlServ = `http://${newServerName}?q=${newQ}` 
@@ -14,7 +14,7 @@ async function gougleSearch(q) {
     var result = []
     var works 
     for (var server of servers) {
-        works = await Promise.race(timeout, queryServer(server, q))
+        works = await Promise.race(timeout, queryServers(server, q))
         if (works instanceof Error) {
             return works
         }
