@@ -1,5 +1,4 @@
 async function queryServers(serverName, q) {
-
     var urlServ = `/${serverName}?q=${q}` 
     var urlBackup = `/${serverName}_backup?q=${q}`
     return await Promise.race([getJSON(urlServ), getJSON(urlBackup)])
@@ -15,7 +14,7 @@ async function gougleSearch(q) {
     for (var server of servers) {
         works = await Promise.race(timeout, queryServers(server, q))
         if (works instanceof Error) {
-            return works
+            throw works
         }
         result.push(works)
     }
