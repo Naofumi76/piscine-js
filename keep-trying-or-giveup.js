@@ -5,7 +5,7 @@ function retry(count=3, callback = async () => {}) {
             return result
         } catch (e) {
             if (count > 0) {
-                retry(count-1, callback)(...args)
+                return retry(count-1, callback)(...args)
             } else {
                 throw e
             }
