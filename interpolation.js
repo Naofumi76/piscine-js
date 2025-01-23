@@ -10,8 +10,24 @@ function interpolation({ step = 0, start =0, end=0, callback=()=>{}, duration =0
         actual += deltaX
         callback([actual.toFixed(2), index])
         index++
-    })
+    }, duration/step)
 }
+
+/* function interpolation({ step = 0, start =0, end=0, callback=()=>{}, duration =0} = {}) {
+    var deltaX = (end - start) / step
+    var actual = start
+    var index = 0
+    var timeout = setInterval(()=> {
+        if (index < step) {
+            callback([actual, (duration / step) * (index+1)])
+            current += deltaX
+            index++
+        }
+        actual += deltaX
+        callback([actual.toFixed(2), index])
+        index++
+    }, duration/step)
+} */
 
 
 interpolation({
