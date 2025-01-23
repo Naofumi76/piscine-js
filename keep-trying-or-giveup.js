@@ -1,23 +1,26 @@
 function retry(count=3, callback = async () => {}) {
     return async function (...args) {
         let attempts = 0
+        while (true) {
             try {
                 return await callback(...args)
             } catch (error) {
-                attempts++
-                if (attempts > count) {
-                    throw new Error
+                if (count > 0) {
+                    retry(count-1, callback)(...args)
+                } else {
+                    throw error
                 }
             }
+        }
     }
 }
 
 function timeout(delay=0, callback = async () => {}) {
     return async function (...args) {
-        const timeoutPromise = new Promise((_, reject) => {
-            setTimeout(() => reject(new Error), delay)
+        var timeoutPromise = new Promise((_, reject) => {
+            setTimeout(() => reject(new Error("timeout")), delay)
         })
-        const callbackPromise = callback(...args)
+        var callbackPromise = callback(...args)
         return Promise.race([callbackPromise, timeoutPromise])
     }
 }
