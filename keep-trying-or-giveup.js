@@ -1,7 +1,7 @@
-function retry(count, callback) {
+function retry(count=3, callback = async () => {}) {
     return async function (...args) {
         let attempts = 0
-        while (true) {
+        while (attempts < count) {
             try {
                 return await callback(...args)
             } catch (error) {
@@ -14,7 +14,7 @@ function retry(count, callback) {
     };
 }
 
-function timeout(delay, callback) {
+function timeout(delay=0, callback = async () => {}) {
     return async function (...args) {
         const timeoutPromise = new Promise((_, reject) => {
             setTimeout(() => reject(new Error), delay)
@@ -24,25 +24,22 @@ function timeout(delay, callback) {
     }
 }
 
-// Simulate a failing async function for retry testing
 async function failingCallback() {
     console.log('Attempt...')
     throw new Error('Failure')
 }
 
-// Simulate a successful async function for timeout testing
 async function successfulCallback() {
     console.log('Processing...')
     return new Promise((resolve) => setTimeout(() => resolve('Success'), 500))
 }
 
-// Retry Example
 const retryWith3Attempts = retry(3, failingCallback)
-retryWith3Attempts().catch(console.error); // Max retry attempts reached
+retryWith3Attempts().catch(console.error);
 
-// Timeout Example
+
 const timeoutWith1Sec = timeout(1000, successfulCallback)
-timeoutWith1Sec().then(console.log).catch(console.error) // Success
+timeoutWith1Sec().then(console.log).catch(console.error)
 
 const timeoutWith500ms = timeout(500, successfulCallback)
-timeoutWith500ms().then(console.log).catch(console.error) // timeout
+timeoutWith500ms().then(console.log).catch(console.error)
