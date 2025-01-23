@@ -79,4 +79,4 @@ async function isWinner(str) {
     }
 }
 
-console.log(isWinner('Brazil'))
+
