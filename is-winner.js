@@ -56,27 +56,25 @@ const db = (() => {
   })() */
   
 async function isWinner(str) {
-    if (str) {
-        var notWinner = false
-        var actual = await db.getWinner(str).catch(() => notWinner = true)
-        if (notWinner) {
-            return `${str} never was a winner`
-        }
-        if (actual.continent !== 'Europe') {
-            return `${str} is not what we are looking for because of the continent`
-        }
-        var countryResults = await db.getResults(actual.id)
-        if (countryResults.length < 3) {
-            return `${str} is not what we are looking for because of the number of times it was champion`
-        }
-        var year = ''
-        var score = ''
-        for (var i = 0; i < countryResults.length; i++) {
-            year = countryResults[i].year
-            score = countryResults[i].score
-        }
-        return `${str} won the FIFA World Cup in ${year} winning by ${score}`
+    var notWinner = false
+    var actual = await db.getWinner(str).catch(() => notWinner = true)
+    if (notWinner) {
+        return `${str} never was a winner`
     }
+    if (actual.continent !== 'Europe') {
+        return `${str} is not what we are looking for because of the continent`
+    }
+    var countryResults = await db.getResults(actual.id)
+    if (countryResults.length < 3) {
+        return `${str} is not what we are looking for because of the number of times it was champion`
+    }
+    var year = ''
+    var score = ''
+    for (var i = 0; i < countryResults.length; i++) {
+        year = countryResults[i].year
+        score = countryResults[i].score
+    }
+    return `${str} won the FIFA World Cup in ${year} winning by ${score}`
 }
 
 
