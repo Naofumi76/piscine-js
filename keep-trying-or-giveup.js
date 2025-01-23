@@ -1,7 +1,6 @@
 function retry(count=3, callback = async () => {}) {
     return async function (...args) {
         let attempts = 0
-        while (true) {
             try {
                 return await callback(...args)
             } catch (error) {
@@ -10,8 +9,7 @@ function retry(count=3, callback = async () => {}) {
                     throw new Error
                 }
             }
-        }
-    };
+    }
 }
 
 function timeout(delay=0, callback = async () => {}) {
