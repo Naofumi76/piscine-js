@@ -1,7 +1,8 @@
 function retry(count=3, callback = async () => {}) {
     return async function (...args) {
         try {
-            return await callback(...args)
+            var result = await callback(...args)
+            return result
         } catch (e) {
             if (count > 0) {
                 retry(count-1, callback)(...args)
