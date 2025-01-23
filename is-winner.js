@@ -71,8 +71,8 @@ async function isWinner(str) {
     var year = ''
     var score = ''
     for (var i = 0; i < countryResults.length; i++) {
-        year += countryResults[i].year
-        score += countryResults[i].score
+        year += i < countryResults.length-1 ? countryResults[i].year+ ' ' : countryResults[i].year
+        score += i < countryResults.length-1 ? countryResults[i].score + ' ' : countryResults[i].score
     }
     return `${str} won the FIFA World Cup in ${year} winning by ${score}`
 }
