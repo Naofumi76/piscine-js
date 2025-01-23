@@ -1,14 +1,12 @@
 function retry(count=3, callback = async () => {}) {
     return async function (...args) {
-        while (true) {
-            try {
-                return await callback(...args)
-            } catch (error) {
-                if (count > 0) {
-                    retry(count-1, callback)(...args)
-                } else {
-                    throw new Error
-                }
+        try {
+            return await callback(...args)
+        } catch (e) {
+            if (count > 0) {
+                retry(count-1, callback)(...args)
+            } else {
+                throw e
             }
         }
     }
