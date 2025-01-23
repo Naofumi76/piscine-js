@@ -10,15 +10,12 @@ function interpolation({ step = 0, start =0, end=0, callback=()=>{}, duration =0
         } else {
             clearInterval(timeout)
         }
-    })
+    }, duration/step)
 }
 
 
 interpolation({
-    step: 5,
-    start: 0,
-    end: 1,
-    duration: 10,
+     step: 5, start: 0, end: 4, duration: 50 ,
     callback: ([x, y]) => {
         console.log(`Point: [${x}, ${y}]`);
     }
