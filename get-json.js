@@ -1,7 +1,7 @@
 async function getJSON(path='', params={}) {
     var url = path + '?'
     if (params) {
-        url += Object.keys(params).map(key => key + '=' + params[key]).join('&')
+        url += Object.keys(params.replace(' ', '+')).map(key => key + '=' + params[key].replace(' ', '+')).join('&')
     }
     var result = await fetch(url)
     .then(response => {
