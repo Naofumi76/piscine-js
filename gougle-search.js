@@ -19,5 +19,5 @@ async function gougleSearch(q) {
         }
         result.push(works)
     }
-    return {image: result[0], video: result[1], url: result[2]}
+    return {image: result[0], web: result[2], video: result[1]}
 }
