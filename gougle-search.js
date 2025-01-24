@@ -1,11 +1,8 @@
 async function queryServers(serverName, q) {
     var urlServ = `/${serverName}?q=${q}` 
     var urlBackup = `/${serverName}_backup?q=${q}`
-    try {
-        return await getJSON(urlServ)
-    } catch (error) {
-        return await getJSON(urlBackup)
-    }
+    var result = await Promise.race([getJSON(urlServ), getJSON(urlBackup)])
+    return result
 }
 
 async function gougleSearch(q) {
@@ -14,14 +11,13 @@ async function gougleSearch(q) {
         setTimeout(resolve, 80, Error('timeout'))
     )
     var result = []
+    var works 
     for (var server of servers) {
-        try {
-            var works = await Promise.race(timeout, queryServers(server, q))
-            result.push(works)
-
-        } catch (error) {
-                throw error
+        works = await Promise.race(timeout, queryServers(server, q))
+        if (works instanceof Error) {
+            throw works
         }
+        result.push(works)
     }
     return {image: result[0], video: result[1], url: result[2]}
 }
