@@ -13,7 +13,7 @@ async function gougleSearch(q) {
     var result = []
     var works 
     for (var server of servers) {
-        works = await Promise.race(timeout, queryServers(server, q))
+        works = await Promise.race([timeout, queryServers(server, q)])
         if (works instanceof Error) {
             throw works
         }
